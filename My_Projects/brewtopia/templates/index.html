@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brewtopia Coffeehouse</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=2">
+</head>
+<body>
+    <header class="hero-section" id="home">
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Brewtopia Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#" onclick="viewCart()" id="cart-link">Cart (<span id="cart-count">0</span>)</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <div class="hero-content">
+        <h1>Welcome to Brewtopia</h1>
+        <p>Where every cup is an adventure in flavor.</p>
+        <a href="#menu" class="btn">Explore Our Menu</a>
+    </div>
+    <!-- Animated floating coffee beans -->
+    <div class="floating-bean bean1"></div>
+    <div class="floating-bean bean2"></div>
+    <div class="floating-bean bean3"></div>
+
+</header>
+
+
+    <main>
+        <section id="menu" class="menu-section">
+            <h2>Our Menu</h2>
+            <p class="section-description">Handcrafted coffee and freshly baked delights, made with love.</p>
+            <div class="menu-grid">
+                <!-- Coffee Drinks -->
+                <div class="menu-item">
+                    <img src="{{ url_for('static', filename='images/expresso.jpg') }}" alt="Espresso">
+                    <h3>Espresso</h3>
+                    <p>Rich, bold, and perfectly roasted to energize your day.</p>
+                    <div class="menu-item-footer">
+                        <span class="price">R63</span>
+                        <button class="btn add-to-cart-btn" onclick="addToCart('Espresso', 63)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="{{ url_for('static', filename='images/latte.jpeg') }}">
+                    <h3>Latte</h3>
+                    <p>Creamy steamed milk with smooth espresso. A cozy classic.</p>
+                    <div class="menu-item-footer">
+                        <span class="price">R81</span>
+                        <button class="btn add-to-cart-btn" onclick="addToCart('Latte', 81)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="{{ url_for('static', filename='images/mocha.jpeg') }}" alt="Mocha">
+                    <h3>Mocha</h3>
+                    <p>Decadent chocolate meets rich espresso in this crowd favorite.</p>
+                    <div class="menu-item-footer">
+                        <span class="price">R90</span>
+                        <button class="btn add-to-cart-btn" onclick="addToCart('Mocha', 90)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-placeholder">
+                        <div class="placeholder-icon">☕</div>
+                    </div>
+                    <h3>Cappuccino</h3>
+                    <p>Equal parts espresso, steamed milk, and frothy foam. Italian perfection.</p>
+                    <div class="menu-item-footer">
+                        <span class="price">R86</span>
+                        <button class="btn add-to-cart-btn" onclick="addToCart('Cappuccino', 86)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-placeholder">
+                        <div class="placeholder-icon">🫘</div>
+                    </div>
+                    <h3>Americano</h3>
+                    <p>Espresso diluted with hot water. Bold and smooth, just like you.</p>
+                    <div class="menu-item-footer">
+                        <span class="price">R68</span>
+                        <button class="btn add-to-cart-btn" onclick="addToCart('Americano', 68)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-placeholder">
+                        <div class="placeholder-icon">🧊</div>
+                    </div>
+                    <h3>Cold Brew</h3>
+                    <p>Slow-steeped for 12+ hours. Smooth, low-acid, and refreshing.</p>
+                    <div class="menu-item-footer">
+                        <span class="price">R77</span>
+                        <button class="btn add-to-cart-btn" onclick="addToCart('Cold Brew', 77)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-placeholder">
+                        <div class="placeholder-icon">❄️</div>
+                    </div>
+                    <h3>Iced Coffee</h3>
+                    <p>Chilled coffee over ice with your choice of milk or cream.</p>
+                    <div class="menu-item-footer">
+                        <span class="price">R71</span>
+                        <button class="btn add-to-cart-btn" onclick="addToCart('Iced Coffee', 71)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-placeholder">
+                        <div class="placeholder-icon">🥐</div>
+                    </div>
+                    <h3>Croissant</h3>
+                    <p>Buttery, flaky French pastry. Perfect with your morning coffee.</p>
+                    <div class="menu-item-footer">
+                        <span class="price">R59</span>
+                        <button class="btn add-to-cart-btn" onclick="addToCart('Croissant', 59)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Pastries & Food -->
+                <div class="menu-item">
+                    <img src="{{ url_for('static', filename='images/Artisan_Pastries.jpeg') }}" alt="Pastries">
+                    <h3>Artisan Pastries</h3>
+                    <p>Freshly baked pastries with a touch of gourmet flair.</p>
+                    <div class="menu-item-footer">
+                        <span class="price">R72</span>
+                        <button class="btn add-to-cart-btn" onclick="addToCart('Artisan Pastries', 72)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-placeholder">
+                        <div class="placeholder-icon">🧁</div>
+                    </div>
+                    <h3>Blueberry Muffin</h3>
+                    <p>Moist muffin bursting with fresh blueberries and topped with streusel.</p>
+                    <div class="menu-item-footer">
+                        <span class="price">R68</span>
+                        <button class="btn add-to-cart-btn" onclick="addToCart('Blueberry Muffin', 68)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-placeholder">
+                        <div class="placeholder-icon">🥪</div>
+                    </div>
+                    <h3>Turkey Club</h3>
+                    <p>Triple-decker sandwich with turkey, bacon, lettuce, tomato, and mayo.</p>
+                    <div class="menu-item-footer">
+                        <span class="price">R161</span>
+                        <button class="btn add-to-cart-btn" onclick="addToCart('Turkey Club', 161)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-placeholder">
+                        <div class="placeholder-icon">🥗</div>
+                    </div>
+                    <h3>Quinoa Salad</h3>
+                    <p>Mixed greens, quinoa, cherry tomatoes, cucumber, and lemon vinaigrette.</p>
+                    <div class="menu-item-footer">
+                        <span class="price">R135</span>
+                        <button class="btn add-to-cart-btn" onclick="addToCart('Quinoa Salad', 135)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-placeholder">
+                        <div class="placeholder-icon">🍪</div>
+                    </div>
+                    <h3>Chocolate Chip Cookie</h3>
+                    <p>Classic chewy cookie loaded with premium chocolate chips.</p>
+                    <div class="menu-item-footer">
+                        <span class="price">R50</span>
+                        <button class="btn add-to-cart-btn" onclick="addToCart('Chocolate Chip Cookie', 50)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-placeholder">
+                        <div class="placeholder-icon">🥧</div>
+                    </div>
+                    <h3>Apple Pie</h3>
+                    <p>Warm apple pie with cinnamon and a flaky, buttery crust.</p>
+                    <div class="menu-item-footer">
+                        <span class="price">R95</span>
+                        <button class="btn add-to-cart-btn" onclick="addToCart('Apple Pie', 95)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <h2>Our Story</h2>
+            <div class="about-content">
+                <img src="{{ url_for('static', filename='images/about.png') }}" alt="About Us">
+                <div>
+                    <p>Brewtopia started as a dream to bring authentic, soulful coffee experiences to our neighborhood. Founded in 2025, we are proud to serve ethically-sourced beans, masterfully brewed and served with heart. Every sip tells our story of passion and community.</p>
+                    <p>Our cozy space is a haven for creatives, thinkers, and anyone who loves good coffee and great conversations.</p>
+                </div>
+            </div>
+        </section>
+
+       <section id="contact" class="contact-section">
+    <h2>Get in Touch</h2>
+    <p class="section-description">Questions or feedback? We'd love to hear from you!</p>
+
+    <form id="contact-form" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+        <p><strong>Tel:</strong> <a href="tel:+27661481164">+27 66 148 1164</a></p>
+        <p><strong>Email:</strong> <a href="mailto:innocentrinae4@gmail.com">innocentrinae4@gmail.com</a></p>
+    </div>
+</section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Brewtopia Coffeehouse. Crafted with love and caffeine.</p>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <h2>Your Cart</h2>
+                <span class="close-cart" onclick="closeCart()">&times;</span>
+            </div>
+            <div id="cart-items" class="cart-items">
+                <!-- Cart items will be populated here -->
+            </div>
+            <div class="cart-total">
+                <strong>Total: R<span id="cart-total">0</span></strong>
+            </div>
+            <div class="cart-actions">
+                <button class="btn cart-clear-btn" onclick="clearCart()">Clear Cart</button>
+                <button class="btn cart-checkout-btn" onclick="checkout()">Proceed to Payment</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}?v=2"></script>
+</body>
+</html>

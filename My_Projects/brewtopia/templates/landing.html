@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brewtopia - Premium Coffee Experience</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional inline styles for enhanced landing page */
+        .hero-gradient-text {
+            background: linear-gradient(135deg, #D2691E, #FF7F50, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+        }
+
+        .floating-particle {
+            position: absolute;
+            border-radius: 50%;
+            animation: float-particle 6s ease-in-out infinite;
+        }
+
+        .particle-1 { background: rgba(210, 105, 30, 0.1); width: 20px; height: 20px; top: 20%; left: 10%; animation-delay: 0s; }
+        .particle-2 { background: rgba(255, 127, 80, 0.15); width: 15px; height: 15px; top: 60%; right: 15%; animation-delay: 2s; }
+        .particle-3 { background: rgba(255, 215, 0, 0.1); width: 25px; height: 25px; top: 40%; left: 80%; animation-delay: 4s; }
+
+        @keyframes float-particle {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+            50% { transform: translateY(-30px) rotate(180deg); opacity: 0.8; }
+        }
+
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .text-shadow-glow {
+            text-shadow: 0 0 30px rgba(210, 105, 30, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Enhanced Hero Section -->
+    <div class="landing-hero">
+        <!-- Animated Background -->
+        <div class="hero-bg-animated">
+            <div class="bg-layer bg-layer-1"></div>
+            <div class="bg-layer bg-layer-2"></div>
+            <div class="bg-layer bg-layer-3"></div>
+        </div>
+
+        <!-- Floating Particles -->
+        <div class="floating-particles">
+            <div class="floating-particle particle-1"></div>
+            <div class="floating-particle particle-2"></div>
+            <div class="floating-particle particle-3"></div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="landing-nav glass-morphism">
+            <div class="nav-brand">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Brewtopia Logo" class="nav-logo">
+                <span class="brand-name">Brewtopia</span>
+            </div>
+            <div class="nav-actions">
+                <a href="{{ url_for('menu') }}" class="btn btn-primary">View Menu</a>
+            </div>
+        </nav>
+
+        <!-- Hero Content -->
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-pretitle">
+                    <span class="pretitle-badge">✨ Premium Coffee Experience</span>
+                </div>
+
+                <h1 class="hero-title">
+                    <span class="title-line">Elevate Your</span>
+                    <span class="title-line hero-gradient-text">Coffee Journey</span>
+                    <span class="title-line">With Brewtopia</span>
+                </h1>
+
+                <p class="hero-description">
+                    Discover the perfect harmony of expertly crafted coffee, warm ambiance, and exceptional service.
+                    Join our community of coffee enthusiasts and transform your daily ritual into something extraordinary.
+                </p>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">5000+</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Coffee Varieties</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.9★</div>
+                        <div class="stat-label">Average Rating</div>
+                    </div>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="{{ url_for('menu') }}" class="btn btn-primary btn-hero">
+                        <span class="btn-icon">☕</span>
+                        <span class="btn-text">Explore Our Menu</span>
+                        <span class="btn-arrow">→</span>
+                    </a>
+                    <a href="#features" class="btn btn-secondary btn-hero">
+                        <span class="btn-icon">📖</span>
+                        <span class="btn-text">Learn More</span>
+                    </a>
+                </div>
+
+                <div class="hero-features">
+                    <span class="feature-tag">✓ Free Loyalty Program</span>
+                    <span class="feature-tag">✓ Expert Baristas</span>
+                    <span class="feature-tag">✓ Premium Beans</span>
+                </div>
+            </div>
+
+            <!-- Enhanced Coffee Visual -->
+            <div class="hero-visual">
+                <div class="coffee-showcase">
+                    <div class="coffee-cup-premium">
+                        <div class="cup-outer">
+                            <div class="cup-inner">
+                                <div class="coffee-liquid">
+                                    <div class="liquid-surface"></div>
+                                    <div class="liquid-bubbles">
+                                        <div class="bubble bubble-1"></div>
+                                        <div class="bubble bubble-2"></div>
+                                        <div class="bubble bubble-3"></div>
+                                    </div>
+                                </div>
+                                <div class="cup-handle-premium"></div>
+                            </div>
+                            <div class="cup-rim"></div>
+                        </div>
+
+                        <div class="steam-effects">
+                            <div class="steam-stream stream-1"></div>
+                            <div class="steam-stream stream-2"></div>
+                            <div class="steam-stream stream-3"></div>
+                        </div>
+
+                        <div class="cup-glow-effect"></div>
+                    </div>
+
+                    <!-- Floating Coffee Elements -->
+                    <div class="floating-coffee-elements">
+                        <div class="coffee-bean-animated bean-1">🫘</div>
+                        <div class="coffee-bean-animated bean-2">☕</div>
+                        <div class="coffee-bean-animated bean-3">🫘</div>
+                        <div class="coffee-bean-animated bean-4">☕</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <p class="scroll-text">Discover More</p>
+        </div>
+    </div>
+
+    <!-- Enhanced Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-shadow-glow">Why Choose Brewtopia?</h2>
+                <p class="section-subtitle">Experience coffee excellence in every cup</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card glass-morphism">
+                    <div class="feature-visual">
+                        <div class="feature-icon-large">🌱</div>
+                        <div class="feature-glow"></div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Sustainably Sourced</h3>
+                        <p>Ethically sourced, single-origin beans from the world's finest coffee-growing regions</p>
+                    </div>
+                </div>
+
+                <div class="feature-card glass-morphism">
+                    <div class="feature-visual">
+                        <div class="feature-icon-large">👨‍🍳</div>
+                        <div class="feature-glow"></div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Master Baristas</h3>
+                        <p>Passionate coffee artisans with years of experience in perfect brewing techniques</p>
+                    </div>
+                </div>
+
+                <div class="feature-card glass-morphism">
+                    <div class="feature-visual">
+                        <div class="feature-icon-large">🏠</div>
+                        <div class="feature-glow"></div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Perfect Ambiance</h3>
+                        <p>Designed spaces for work, relaxation, and creating meaningful connections</p>
+                    </div>
+                </div>
+
+                <div class="feature-card glass-morphism">
+                    <div class="feature-visual">
+                        <div class="feature-icon-large">🎁</div>
+                        <div class="feature-glow"></div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Rewards Program</h3>
+                        <p>Earn points with every visit and unlock exclusive benefits and experiences</p>
+                    </div>
+                </div>
+
+                <div class="feature-card glass-morphism">
+                    <div class="feature-visual">
+                        <div class="feature-icon-large">🚀</div>
+                        <div class="feature-glow"></div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Quick Service</h3>
+                        <p>Efficient ordering and delivery system bringing fresh coffee to your location</p>
+                    </div>
+                </div>
+
+                <div class="feature-card glass-morphism">
+                    <div class="feature-visual">
+                        <div class="feature-icon-large">📅</div>
+                        <div class="feature-glow"></div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Smart Reservations</h3>
+                        <p>Easy online booking for tables and special events with instant confirmation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Loved by Coffee Enthusiasts</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card glass-morphism">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-content">
+                        <p>Brewtopia has completely transformed my morning routine. The attention to detail in every cup is remarkable.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info">
+                            <h4>Sarah Mitchell</h4>
+                            <span>Daily Customer</span>
+                        </div>
+                        <div class="testimonial-rating">★★★★★</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card glass-morphism">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-content">
+                        <p>The best coffee shop experience I've ever had. The baristas are true artists and the atmosphere is perfect.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JD</div>
+                        <div class="author-info">
+                            <h4>James Davis</h4>
+                            <span>Coffee Connoisseur</span>
+                        </div>
+                        <div class="testimonial-rating">★★★★★</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card glass-morphism">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-content">
+                        <p>Perfect place for both work and relaxation. The loyalty program keeps me coming back for more amazing experiences.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">EC</div>
+                        <div class="author-info">
+                            <h4>Emma Chen</h4>
+                            <span>Remote Worker</span>
+                        </div>
+                        <div class="testimonial-rating">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced CTA Section -->
+    <section class="cta-section">
+        <div class="cta-bg-animated"></div>
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Experience Coffee Excellence?</h2>
+                <p class="cta-description">Join thousands of coffee lovers who have made Brewtopia their home away from home</p>
+                <div class="cta-actions">
+                    <a href="{{ url_for('menu') }}" class="btn btn-primary btn-cta-large">
+                        <span class="btn-text">View Our Menu</span>
+                        <span class="btn-arrow">→</span>
+                    </a>
+                    <a href="#hero" class="btn btn-outline btn-cta-large">
+                        <span class="btn-text">Back to Top</span>
+                    </a>
+                </div>
+                <div class="cta-benefits">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🎁</span>
+                        <span class="benefit-text">Free first coffee</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">⭐</span>
+                        <span class="benefit-text">Loyalty points</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🚚</span>
+                        <span class="benefit-text">Free delivery</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="landing-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Brewtopia Logo" class="footer-logo">
+                    <div class="brand-info">
+                        <h3>Brewtopia</h3>
+                        <p>Where every cup tells a story</p>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Explore</h4>
+                        <a href="#menu">Our Menu</a>
+                        <a href="#about">About Us</a>
+                        <a href="#locations">Locations</a>
+                        <a href="#careers">Careers</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Support</h4>
+                        <a href="#help">Help Center</a>
+                        <a href="#contact">Contact Us</a>
+                        <a href="#size-guide">Size Guide</a>
+                        <a href="#shipping">Shipping Info</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Connect</h4>
+                        <a href="#facebook">Facebook</a>
+                        <a href="#instagram">Instagram</a>
+                        <a href="#twitter">Twitter</a>
+                        <a href="#newsletter">Newsletter</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2025 Brewtopia Coffeehouse. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#terms">Terms of Service</a>
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#cookies">Cookie Policy</a>
+                        <a href="#accessibility">Accessibility</a>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <a href="#facebook" class="social-link">📘</a>
+                    <a href="#instagram" class="social-link">📷</a>
+                    <a href="#twitter" class="social-link">🐦</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
